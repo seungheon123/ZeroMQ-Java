@@ -12,7 +12,7 @@ public class Server {
         System.out.println("Publishing updates at weather server...");
         try(ZContext context = new ZContext()){
             ZMQ.Socket publisher = context.createSocket(SocketType.PUB);
-            publisher.bind("tcp://*:9999");
+            publisher.bind("tcp://*:5557");
             Random rand = new Random();
             while (!Thread.currentThread().isInterrupted()){
                 int zipcode = rand.nextInt(100000 - 1) + 1;

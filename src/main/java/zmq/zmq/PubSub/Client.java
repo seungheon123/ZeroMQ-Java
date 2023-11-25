@@ -8,7 +8,7 @@ public class Client {
     public static void main(String[] args) {
         try(ZContext context = new ZContext()) {
             ZMQ.Socket subscriber = context.createSocket(SocketType.SUB);
-            subscriber.connect("tcp://localhost:9999");
+            subscriber.connect("tcp://localhost:5557");
             String zipFilter = (args.length>0)?args[0]:"10001";
             subscriber.subscribe(zipFilter.getBytes(ZMQ.CHARSET));
 
